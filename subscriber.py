@@ -10,7 +10,7 @@ DURATION_THRESHOLD = 5*60  # 5 minutes in seconds
 data_points = []
 
 def on_message(client, userdata, msg):
-    global data_points, alarm_triggered
+    global data_points
     payload = json.loads(msg.payload.decode())
     temperature = payload["temperature"]
     timestamp = payload["timestamp"]
