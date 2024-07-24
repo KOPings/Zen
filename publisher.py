@@ -18,7 +18,8 @@ def main():
     try:
         while True:
             temperature = read_temperature()
-            payload = json.dumps({"temperature": round(temperature,2), "timestamp": int(time.time())})            client.publish("hotel/temperature", payload, qos=0)
+            payload = json.dumps({"temperature": round(temperature,2), "timestamp": int(time.time())})            
+            client.publish("hotel/temperature", payload, qos=0)
             time.sleep(1)
     except:
         print("Publisher stopped")
