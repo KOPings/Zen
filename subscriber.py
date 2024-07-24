@@ -3,7 +3,7 @@ import paho.mqtt.client as paho
 import json
 import time
 import sys
-
+from datetime import datetime
 
 TEMPERATURE_THRESHOLD = 22.0
 DURATION_THRESHOLD = 5*60  # 5 minutes in seconds
@@ -14,8 +14,8 @@ def on_message(client, userdata, msg):
     payload = json.loads(msg.payload.decode())
     temperature = payload["temperature"]
     timestamp = payload["timestamp"]
-
-    data_points.append((temperature, timestamp))
+    f_timestamp = datetime.fromtimestamp(timestamp).strftime('%Y-%m-%d %H:%M:%S')
+    data_points.append((temperature, f_timestamp))
 
         # Save data points locally
     with open("temperature_data.json", "w") as f:
