@@ -14,7 +14,7 @@ def read_latest_data() -> Union[Dict[str, Union[str, float, int]], Dict[str, str
                 return {"temperature": latest_data[0], "timestamp": latest_data[1]}
     return {"error": "No data available"}
 
-@app.get("/latest-temperature")
+@app.get("/")
 def get_latest_temperature():
     return read_latest_data()
 
