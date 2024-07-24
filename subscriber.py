@@ -24,7 +24,7 @@ def on_message(client, userdata, msg):
         data_points.pop(0)
 
     if len(data_points) == 5 and all(point[0] > TEMPERATURE_THRESHOLD for point in data_points):
-        print("ALARM: Temperature has been above threshold for the last 5 data points!")
+        print("ALARM: Temperature has been above threshold for the last 5 minutes!")
 
 def main():
     client = paho.Client()
