@@ -27,5 +27,4 @@ def main():
     client.disconnect()
 
 if __name__ == "__main__":
-    main()
-~                   
+    main()           
