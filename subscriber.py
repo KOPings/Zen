@@ -39,7 +39,7 @@ def main():
     try:
         print("Press Ctrl+C to exit ...")
         client.loop_forever()
-    except KeyboardInterrupt:
+    except:
         print("Subscriber stopped")
 
     client.disconnect()
